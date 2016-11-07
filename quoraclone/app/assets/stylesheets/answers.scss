@@ -3,36 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-
   margin: 0px;
 }
 
-nav{
+/*nav{
   border: 2px solid darkblue;
   padding: 10px;
-  margin-bottom: 35px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding-left: 30px;*/
+  #nav-container{
+  	border: 2px solid darkblue;
+  	ul{
 
-  ul{
   	margin: 0px;
     display: flex;
+    padding: 10px;
 	  li{
 	    display: inline-block;
-	  	margin-right: 5%;
+	  	margin-right: 35px;
 	  }
 	  #logo a{
 	  	text-decoration: none;
 	  	height: 50px;
 	  	width: 80px;
-	  	font-size: 1.7em;
+	  	font-size: 1.4em;
 	  	color: darkblue;
 	  }
 	  form{
 	  	display: flex;
 	  	width: 450px;
 		#question{
-	      height: 1em;
+	      height: 1.2em;
   	      width: 70%;
-  	      font-size: 1.5em;
+  	      font-size: 1.2em;
   	      border-radius: 2px;
   	      background-color: #e2e2e2;
 	    }
@@ -42,48 +48,49 @@ nav{
 	      font-size: 1em;
 	    }
 	  }
+
+	  a{
+	  	text-decoration: none;
+	  	height: 50px;
+	  	width: 80px;
+	  	font-size: 1.3em;
+	  	color: darkblue;
+	  }
 	  
   }
-}
-
-
-/*
-.search-bar-box{
-  border: 3px solid darkgreen;
-  height: 65px;
-  form{
-  	height: 60px;
-  	width:75%;
-  	margin: auto;
-  	#question{
-  	  height: 80%;
-  	  width: 95%;
-  	  font-size: 2em;
-  	  border-radius: 10px;
-  	}
   }
+  
 
+.feed-container{
+  border: 20px solid grey;
+  height: 710px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
-*/
-
-
-
 
 
 .question-display-box{
-  border-bottom: 2px solid black;
-  width: 70%;
+  border: 2px;
+  width: 700px;
 /*  height: 300px;*/
   margin: auto;
   padding: 20px;
   background-color: white;
-  
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+
 }
+
+.line-break{
+  border-bottom: 1px solid black;
+  height: 1px;
+  margin: auto;
+  width: 640px;
+}
+
 
 .question-title{
   border: 2px ;
-  font-size: 2em;
+  font-size: 1.4em;
   width: 90%;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: bold;
@@ -95,20 +102,22 @@ nav{
 }
 
 .single-answer-display{
-  border: 2px solid black;
-  font-size: 2.5em;
-  width: 90%;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  border: 2px ;
+  font-size: 1.1em;
+  width: 85%;
+  padding: 5px;
+  font-family: Georgia,Times,"Times New Roman",serif;
   margin: auto;
 
 }
 
 .answer-user-info{
-  border: 2px solid black;
-  font-size: 1.5em;
+  border: 2px ;
+  font-size: 1em;
   width: 90%;
   margin: auto;
   margin-top: 10px;
+  color: grey;
 }
 
 .info-and-options{
@@ -145,6 +154,7 @@ nav{
 	  border: 2px solid blue;
 	  height: 100%;
 	  width: 100%;
+	  font-size: 1.2em;
 	}	
 }
 

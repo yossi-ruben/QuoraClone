@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Torah Questions </title>
+    <title>BAIZ</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +9,7 @@
   </head>
 
   <body>
-<nav>
+    <div id="nav-container">
     <ul class="nav-bar">
 
       <li id="logo"> <%= link_to "BAIZ", root_path%></li>
@@ -21,14 +21,20 @@
         <% end %>
       </li>
 
-      <li>Read</li>
-      <li>Answer</li>
-      <li>Notifications</li>
-      <li>Profile </li>
+      <li> <%= link_to "Read", root_path%></li>
+      <li><a href="">Answer</a></li>
+      <li><a href="">Notifications</a></li>
+
+      <% if logged_in? %>
+        <li> <a href=""> <%= current_user.username %> </a> </li> 
+        <li><%= link_to "Logout", log_out_path %></li>
+      <% else %>
+        <li><%= link_to "Login", log_in_path %></li>
+        <li> <%= link_to "Register", new_user_path %></li>
+      <% end %>
+
     </ul>
-        
-      
-</nav>
+    </div>
 
     <%= yield %>
   </body>

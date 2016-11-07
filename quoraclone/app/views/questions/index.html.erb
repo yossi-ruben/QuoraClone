@@ -1,33 +1,32 @@
+<div class="feed-container">
+  <% @questions.each do |q| %>
+    <div class="question-display-box">
+	  <div class="question-title">
+	    <%= link_to  q.title, question_path(q) %>	
+	  </div>	
 
-<% @questions.each do |q| %>
-  <div class="question-display-box">
+	 <% unless q.answers.empty?%>
+	   <div class="answer-user-info">
+	     <%= q.answers.first.user.username %>,
+	  	 <%= q.answers.first.user.bio %>
+	   </div>
+	   <div class="single-answer-display">
+	     <%= q.answers.first.body %>
+	   </div>
+	 <% end %>
+		
 
- 	<div class="question-title">
-      <%= link_to  q.title, question_path(q) %>	
- 	</div>	
- 
- 	<% unless q.answers.empty?%>
+ 	 <div class="info-and-options">
+ 	   <div class="answer-tag">
+ 		 <%= link_to "Answer", new_question_answer_path(q) %>
+ 	   </div>
+ 	 </div>
 
- 	  <div class="answer-user-info">
- 	    <%= q.answers.first.user.username %>,
- 	  	<%= q.answers.first.user.bio %>
- 	  </div>
-
-	  <div class="single-answer-display">
-	 	<%= q.answers.first.body %>
-	  </div>
-
- 	<% end %>
+	 </div>
+    <div class="line-break"></div>
+  <% end %>	
+</div>
 	
-
- 	<div class="info-and-options">
- 	  <div class="answer-tag">
- 		<%= link_to "Answer", new_question_answer_path(q) %>
- 	  </div>
- 	</div>
-
-  </div>
-<% end %>
 
 
 

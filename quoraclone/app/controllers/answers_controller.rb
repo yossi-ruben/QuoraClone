@@ -11,7 +11,6 @@ class AnswersController < ApplicationController
   	@question.answers << @answer
 
     redirect_to root_path
-
   end
 
 
