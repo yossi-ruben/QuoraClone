@@ -60,13 +60,23 @@ body{
   }
   }
   
+.scroll-hider{
+	width: 750px;
+	height: 750px;
+	border: 1px; 
+	overflow: hidden;
+	margin: auto;
+}
 
 .feed-container{
-  border: 20px solid grey;
-  height: 710px;
+  border: 1px;
+  width: 800px;
+  margin: auto;
+  height: 750px;
   overflow: scroll;
-  overflow-x: hidden;
+  overflow: auto;
 }
+
 
 
 .question-display-box{
