@@ -3,5 +3,5 @@ class Question < ApplicationRecord
 	has_many :subjects, through: :question_subjects
 	has_many :answers
 
-	belongs_to :users
+	belongs_to :user
 end

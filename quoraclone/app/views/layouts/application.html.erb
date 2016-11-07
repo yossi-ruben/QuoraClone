@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quoraclone</title>
+    <title>Torah Questions </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,14 @@
   </head>
 
   <body>
+  	<nav>
+  		<div class="search-bar-box">
+  		  <%= form_tag(questions_query_path) do %>
+  			<%= text_field_tag :question %>
+ 			<%= submit_tag "Ask" %> <!-- :style => "display: none;" -->
+		  <% end %>
+  		</div>
+  	</nav>
     <%= yield %>
   </body>
 </html>

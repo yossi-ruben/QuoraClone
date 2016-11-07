@@ -1,0 +1,15 @@
+<div class="question-display-box">	
+  <div class="question-title">
+ 	<%= @question.title %>
+   </div>	
+
+
+</div>
+
+
+  <%= form_tag(add_answer_path(@question), :class => "add-answer-form") do %>
+    <%= text_area_tag :body %><br>
+    <%= submit_tag "Answer"%>
+  <% end %> 
+
+ 

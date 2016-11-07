@@ -1,0 +1,107 @@
+// Place all the styles related to the Answers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: lightgrey;
+}
+
+
+.search-bar-box{
+  border: 3px solid darkgreen;
+  height: 65px;
+  form{
+  	height: 60px;
+  	width:75%;
+  	margin: auto;
+  	#question{
+  	  height: 80%;
+  	  width: 95%;
+  	  font-size: 2em;
+  	}
+  }
+
+}
+
+
+
+
+
+
+.question-display-box{
+  border: 2px solid black;
+  width: 95%;
+/*  height: 300px;*/
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.question-title{
+  border: 2px solid black;
+  font-size: 3em;
+  width: 90%;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  margin: auto;
+}
+
+.single-answer-display{
+  border: 2px solid black;
+  font-size: 2.5em;
+  width: 90%;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: auto;
+
+}
+
+.answer-user-info{
+  border: 2px solid black;
+  font-size: 1.5em;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.info-and-options{
+  border: 2px  ;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  height: 2em;
+  margin-top:10px;
+  padding: 5px;
+}
+
+.answer-tag{
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: lightblue;
+  a {
+  	text-decoration: none;
+    color: darkblue;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+
+.add-answer-form{
+	border: 2px solid black;
+	height: 300px;
+	width: 800px;
+	margin: auto;
+	#body{
+	  border: 2px solid blue;
+	  height: 100%;
+	  width: 100%;
+	}	
+}
+
+
+
+
