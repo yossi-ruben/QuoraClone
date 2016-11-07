@@ -10,7 +10,8 @@ class AnswersController < ApplicationController
   	@answer = Answer.new(body: params[:body], user_id: 1)
   	@question.answers << @answer
 
-  	binding.pry
+    redirect_to root_path
+
   end
 
 

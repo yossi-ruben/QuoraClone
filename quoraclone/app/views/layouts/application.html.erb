@@ -9,14 +9,27 @@
   </head>
 
   <body>
-  	<nav>
-  		<div class="search-bar-box">
-  		  <%= form_tag(questions_query_path) do %>
-  			<%= text_field_tag :question %>
- 			<%= submit_tag "Ask" %> <!-- :style => "display: none;" -->
-		  <% end %>
-  		</div>
-  	</nav>
+<nav>
+    <ul class="nav-bar">
+
+      <li id="logo"> <%= link_to "BAIZ", root_path%></li>
+
+      <li> 
+        <%= form_tag(questions_query_path) do %>
+          <%= text_field_tag :question, nil, placeholder: "Ask or Search Baiz"%>
+          <%= submit_tag "Ask Question", class: "submit-button" %> 
+        <% end %>
+      </li>
+
+      <li>Read</li>
+      <li>Answer</li>
+      <li>Notifications</li>
+      <li>Profile </li>
+    </ul>
+        
+      
+</nav>
+
     <%= yield %>
   </body>
 </html>

@@ -7,21 +7,23 @@
  	</div>	
  
  	<% unless q.answers.empty?%>
+
  	  <div class="answer-user-info">
- 	  	user info: <%= q.answers.first.user.username %>,
+ 	    <%= q.answers.first.user.username %>,
  	  	<%= q.answers.first.user.bio %>
  	  </div>
 
 	  <div class="single-answer-display">
 	 	<%= q.answers.first.body %>
 	  </div>
+
  	<% end %>
 	
+
  	<div class="info-and-options">
  	  <div class="answer-tag">
  		<%= link_to "Answer", new_question_answer_path(q) %>
  	  </div>
-
  	</div>
 
   </div>
