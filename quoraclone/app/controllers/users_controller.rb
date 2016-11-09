@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: session[:user_id])
+    @questions_recieved = QuestionSent.where(receiver_id: session[:user_id])
+    @questions_sent = QuestionSent.where(sender_id: session[:user_id])
   end
 
   def login

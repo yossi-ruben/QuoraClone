@@ -8,8 +8,8 @@ class QuestionsController < ApplicationController
 
   end
   
-  def unanswered_questions
-    binding.pry
+  def unanswered
+    @questions = Question.all.select{|q| q.answers.empty?}
   end
 
   def show
