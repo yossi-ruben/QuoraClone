@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post "questions/questions_query" => "questions#questions_query", :as => "questions_query"
 
+  get "questions/unanswered/qs" => "questions#unanswered", :as => "unanswered"
+
   resources :users
   get "log_out" => "users#destroy", :as => "log_out"
   get "log_in" => "users#login", :as => "log_in"

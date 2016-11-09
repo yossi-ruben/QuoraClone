@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BAIZ</title>
+    <title>Baiz</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,11 +22,11 @@
       </li>
 
       <li> <%= link_to "Read", root_path%></li>
-      <li><a href="">Answer</a></li>
+      <li><%=link_to "Answer", unanswered_path%></li>
       <li><a href="">Notifications</a></li>
 
       <% if logged_in? %>
-        <li> <a href=""> <%= current_user.username %> </a> </li> 
+        <li><%= link_to current_user.username, user_path(current_user) %> </li> 
         <li><%= link_to "Logout", log_out_path %></li>
       <% else %>
         <li><%= link_to "Login", log_in_path %></li>

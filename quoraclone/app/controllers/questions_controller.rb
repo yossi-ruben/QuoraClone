@@ -7,6 +7,10 @@ class QuestionsController < ApplicationController
   def create
 
   end
+  
+  def unanswered_questions
+    binding.pry
+  end
 
   def show
     # binding.pry
@@ -24,5 +28,7 @@ class QuestionsController < ApplicationController
       redirect_to question_path(@question.first.id)
     end
   end
+
+
 
 end
