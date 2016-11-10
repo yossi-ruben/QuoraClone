@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
 
   def show
     # binding.pry
-    @question = Question.find_by(params[:id])
+    @question = Question.find_by(id: params[:id])
   end
 
   def questions_query
