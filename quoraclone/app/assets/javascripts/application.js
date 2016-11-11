@@ -14,3 +14,37 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+
+	// this it for the auto complete of the search bar
+	  $.ajax({
+        url: '/questions'
+      }).done(function(response){
+
+        $("#question").autocomplete({
+          source: response,
+          change: function( event, ui) {
+          }
+        });
+	  })
+	// end of search bar jazz
+
+	// this is for the autocomplete for the send to user attr
+	  $.ajax({
+	  	url: '/users'
+	  }).done(function(response){
+
+	  	$(".username").autocomplete({
+	  		source: response,
+	  		change: function( event, ui){
+	  		}
+	  	});
+	  })
+	// end of autosend to user jazz
+
+
+
+
+});

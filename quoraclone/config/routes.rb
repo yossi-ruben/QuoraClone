@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get "log_in" => "users#login", :as => "log_in"
   post "check_log_in" => "users#checklogin", :as => "checklogin"
 
+  post "users/question/:question_id" => "users#send_to_user", :as => "send_to_user"
+
+
   root 'questions#index'
 
 end

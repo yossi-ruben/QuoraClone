@@ -1,46 +1,44 @@
 <div class="scroll-hider">
-	
+  <div class="feed-container">
+    <% @questions.each do |q| %>
+      <div class="question-display-box">
+	    <div class="question-title">
+	      <%= link_to  q.title, question_path(q) %>	
+	    </div>	
 
-<div class="feed-container">
-
-  <% @questions.each do |q| %>
-    <div class="question-display-box">
-	  <div class="question-title">
-	    <%= link_to  q.title, question_path(q) %>	
-	  </div>	
-
-	 <% unless q.answers.empty?%>
-	   <div class="answer-user-info">
-	     <%= q.answers.first.user.username %>,
-	  	 <%= q.answers.first.user.bio %>
-	   </div>
-	   <div class="single-answer-display">
-	     <%= q.answers.first.body %>
-	   </div>
-	 <% end %>
+	    <% unless q.answers.empty?%>
+	      <div class="answer-user-info">
+	        <%= q.answers.first.user.username %>,
+	  	    <%= q.answers.first.user.bio %>
+	      </div>
+	      <div class="single-answer-display">
+	        <%= q.answers.first.body %>
+	      </div>
+	    <% end %>
 		
 
- 	 <div class="info-and-options">
- 	   <div class="attr-tag">
- 		 <%= link_to "Answer", new_question_answer_path(q) %>
- 	   </div>
+ 	    <div class="info-and-options">
+ 	      <div class="attr-tag">
+ 		    <%= link_to "Answer", new_question_answer_path(q) %>
+ 	      </div>
 
- 	   <div class="attr-tag">
- 	     <a href="">Upvote</a>
- 	   </div>
+ 	      <div class="attr-tag">
+ 	        <a href="">Upvote</a>
+ 	      </div>
 
- 	   <div class="attr-tag">
- 	   	 <a href="">Seek Answer</a>
- 	   </div>
- 	 
- 	 </div>
+ 	      <div class="attr-tag">
+ 	       <%= form_tag(send_to_user_path(q.id)) do %>
+ 	       	<%= text_field_tag :username, nil, placeholder: "Ask User", class: "username"%>
 
+ 	       <% end %>
+
+ 	   	    
+ 	      </div>
+ 	    </div>
 	 </div>
     <div class="line-break"></div>
   <% end %>	
-
-</div>
-	
+  </div>	
 </div>
 
 

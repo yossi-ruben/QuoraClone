@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+ 
+  def index
+    if request.xhr?
+      @users = User.all.map{|u| u.username}.sort
+      render json: @users
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -21,8 +29,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: session[:user_id])
-    @questions_recieved = QuestionSent.where(receiver_id: session[:user_id])
-    @questions_sent = QuestionSent.where(sender_id: session[:user_id])
+    @questions_recieved = QuestionSent.where(receiver_id: params[:id])
+    @questions_sent = QuestionSent.where(sender_id: params[:id])
+
   end
 
   def login
@@ -36,6 +45,24 @@ class UsersController < ApplicationController
     else
       redirect_to log_in_path
     end
+  end
+
+
+  def send_to_user
+    qs = QuestionSent.new
+    @question = Question.find_by(id: params[:question_id])
+    @receiver = User.find_by(username: params[:username])
+    @sender = User.find_by(id: session[:user_id])
+
+    qs.question = @question
+    qs.sender = @sender
+
+    if @receiver
+       qs.receiver = @receiver 
+       qs.save!
+    end
+    binding.pry
+    redirect_to root_path
   end
 
 
