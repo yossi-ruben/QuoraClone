@@ -1,5 +1,11 @@
-<div class="scroll-hider">
-  <div class="feed-container">
+<!-- <div class="scroll-hider"> -->
+
+  <div class="home-page">
+
+  <div class="options-feed">
+  	<p>asdfasdfasdf</p>
+  </div>
+
     <% @questions.each do |q| %>
       <div class="question-display-box">
 	    <div class="question-title">
@@ -29,17 +35,16 @@
  	      <div class="attr-tag">
  	       <%= form_tag(send_to_user_path(q.id)) do %>
  	       	<%= text_field_tag :username, nil, placeholder: "Ask User", class: "username"%>
-
  	       <% end %>
-
- 	   	    
  	      </div>
  	    </div>
-	 </div>
+	  </div>
+
     <div class="line-break"></div>
-  <% end %>	
+    <% end %>	
   </div>	
-</div>
+
+<!-- </div> -->
 
 
 
