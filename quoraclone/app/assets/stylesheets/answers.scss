@@ -17,15 +17,30 @@ body{
 
   #nav-container{
   	border: 2px solid darkblue;
-  	padding-left: 10px;
-    margin-bottom: 40px;
+    border-left: white;
+/*    margin: auto;*/
+    height: 45px;
+ /*   display: flex;*/
+    position: fixed;
+    width: 100%;
+    background-color: white;
+/*    text-align: center;*/
+
   	ul{
-  	  margin: 0px;
+   /*   border: 2px solid orange;*/
+     /* position: fixed;*/
+      width: 1100px;
+  	  margin: auto;
+     /* width: 80%;
+      margin: 0 auto;*/
       display: flex;
-      padding: 10px;
+      padding: 8px;
+      background-color: white;
+      height: 25px;
 	    li{
 	      display: inline-block;
-	  	  margin-right: 35px;
+	  	  /*margin-right: 25px;*/
+        margin: auto;
 	    }
 	    #logo a{
 	  	  text-decoration: none;
@@ -40,7 +55,7 @@ body{
 		    #question{
 	        height: 1.2em;
   	      width: 70%;
-  	      font-size: 1.2em;
+  	      font-size: 1.1em;
   	      border-radius: 2px;
   	      background-color: #e2e2e2;
 	      }
@@ -50,15 +65,14 @@ body{
 	        font-size: .9em;
 	      }
 	    }
-	  a{
-	  	text-decoration: none;
-	  	height: 50px;
-	  	width: 80px;
-	  	font-size: 1.3em;
-	  	color: darkblue;
-	  }
-	  
-  }
+	    a{
+	  	  text-decoration: none;
+	  	  height: 50px;
+	  	  width: 80px;
+	  	  font-size: 1.3em;
+	  	  color: darkblue;
+	    }
+   }
   }
   
 .scroll-hider{
@@ -73,6 +87,7 @@ body{
   border: 1px;
   width: 800px;
   margin: auto;
+  margin-top: 80px;
   height: 750px;
   overflow: scroll;
   overflow: auto;

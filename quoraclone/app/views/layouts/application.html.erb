@@ -14,30 +14,30 @@
 
   <body>
     <div id="nav-container">
-    <ul class="nav-bar">
+      <ul class="nav-bar">
 
-      <li id="logo"> <%= link_to "BAIZ", root_path%></li>
+        <li id="logo"> <%= link_to "BAIZ", root_path%></li>
 
-      <li> 
-        <%= form_tag(questions_query_path) do %>
-          <%= text_field_tag :question, nil, placeholder: "Ask or Search Baiz"%>
-          <%= submit_tag "Ask Question", class: "submit-button" %> 
+        <li> 
+          <%= form_tag(questions_query_path) do %>
+            <%= text_field_tag :question, nil, placeholder: "Ask or Search Baiz"%>
+            <%= submit_tag "Ask Question", class: "submit-button" %> 
+          <% end %>
+        </li>
+
+        <li> <%= link_to "Read", root_path%></li>
+        <li><%=link_to "Answer", unanswered_path%></li>
+        <li><a href="">Notifications</a></li>
+
+        <% if logged_in? %>
+          <li><%= link_to current_user.username, user_path(current_user) %> </li> 
+          <li><%= link_to "Logout", log_out_path %></li>
+        <% else %>
+          <li><%= link_to "Login", log_in_path %></li>
+          <li> <%= link_to "Register", new_user_path %></li>
         <% end %>
-      </li>
 
-      <li> <%= link_to "Read", root_path%></li>
-      <li><%=link_to "Answer", unanswered_path%></li>
-      <li><a href="">Notifications</a></li>
-
-      <% if logged_in? %>
-        <li><%= link_to current_user.username, user_path(current_user) %> </li> 
-        <li><%= link_to "Logout", log_out_path %></li>
-      <% else %>
-        <li><%= link_to "Login", log_in_path %></li>
-        <li> <%= link_to "Register", new_user_path %></li>
-      <% end %>
-
-    </ul>
+      </ul>
     </div>
 
     <%= yield %>
