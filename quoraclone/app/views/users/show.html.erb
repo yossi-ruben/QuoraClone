@@ -1,14 +1,52 @@
-here punot
+<div class="user-page">
+<h1>UserInfo</h1>
+<%= @user.username %>
+<%= @user.bio %>
 
-<%= @user %>
+
+<div class="answers">
+<h1>Answers</h1>
+	<% unless @answers.empty? %>
+	  <% @answers.each do |a| %>
+		<div class="question-display-box">
+		  <div class="question-title">
+		    <%= link_to  a.question.title, question_path(a.question) %>	
+		  </div>
+
+		   <div class="single-answer-display">
+		      <%= a.body %>
+		  </div>	
+		</div>
+	  <% end %>
+	<% end %>
+</div>
+
+<div class="answer-requests">
+  <h1>Answers Requested</h1>
+  <% @q_and_senders.each do |q, arr|%>
+   	  <div class="question-display-box">
+
+   		<div class="question-title">
+	      <%= link_to  q.title, question_path(q) %>	
+	    </div>	
+
+	    <div class="info-and-options">
+ 	      <div class="attr-tag">
+ 		    <%= link_to "Answer", new_question_answer_path(q) %>
+ 	      </div>
+ 	    </div>
+   	  </div>
+
+   	<div><%= arr.map{|v| v.username} %></div>
+  <% end %>
 
 
-<hr>
-<p>receivev</p>
-<%= @questions_recieved.count %>
+</div>
 
-<hr>
 
 <p>sent</p>
 
-<%= @questions_sent.count %>
+
+
+
+</div>

@@ -28,8 +28,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: session[:user_id])
-    @questions_recieved = QuestionSent.where(receiver_id: params[:id])
+    @user = User.find_by(id: params[:id])
+    @q_and_senders = Hash.new {|h,k| h[k] = Array.new }
+    q_rec = QuestionSent.where(receiver_id: params[:id])
+    @answers = @user.answers
+
+    unless q_rec.empty?
+      
+       q_rec.each{|q| @q_and_senders[q.question] << q.sender }
+      
+    end
     @questions_sent = QuestionSent.where(sender_id: params[:id])
 
   end

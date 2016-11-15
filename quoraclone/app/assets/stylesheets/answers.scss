@@ -17,6 +17,7 @@ body{
 
   #nav-container{
   	border: 2px solid darkblue;
+    border-bottom: 2px solid lightgrey;
     border-left: white;
 /*    margin: auto;*/
     height: 45px;
@@ -25,7 +26,7 @@ body{
     width: 100%;
     background-color: white;
 /*    text-align: center;*/
-
+    padding: 4px;
 
   	ul{
    /*   border: 2px solid orange;*/
@@ -86,7 +87,7 @@ body{
 }*/
 
 .home-page{
-  border: 1px solid orange;
+  border: 1px ;
   /*width: 800px;*/
   width: 100%;
   margin: auto;
@@ -96,22 +97,23 @@ body{
   overflow: auto;
 /*  overflow: auto;*/
   padding-right: 15px;
+  /*position: relative;*/
 }
 
 .options-feed{
   border: 2px solid black;
-  height: 400px;
+  height: 450px;
   width: 170px;
-  display: inline;
+/*  display: inline;*/
   position: fixed;
-  left: 25px;
+  left: 100px;
 }
 
 
 
 .question-display-box{
   border: 2px;
-  width: 700px;
+  width: 650px;
 /*  height: 300px;*/
   margin: auto;
   padding: 20px;
@@ -124,7 +126,7 @@ body{
   border-bottom: 1px solid black;
   height: 1px;
   margin: auto;
-  width: 635px;
+  width: 600px;
 }
 
 
@@ -206,5 +208,18 @@ body{
 }
 
 
+/*user page*/
+.user-page{
+  padding-top: 100px;
+  border: 2px solid orange;
+}
 
+
+.answers{
+  border: 2px solid pink;
+}
+
+.answer-requests{
+  border: 2px solid grey;
+}
 
