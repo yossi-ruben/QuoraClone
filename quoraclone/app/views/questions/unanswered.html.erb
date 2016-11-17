@@ -1,32 +1,33 @@
 <!-- <div class="scroll-hider"> -->
-  <div class="feed-container">
-    <div class="question-display-box">	
+  <div class="home-page">
+    
 
     <% @questions.each do |q| %>
     <br>
+    <div class="question-display-box">  
+  	  <div class="question-title">
+  	    <%= link_to  q.title, question_path(q) %>	
+  	  </div>
 
-	  <div class="question-title">
-	    <%= link_to  q.title, question_path(q) %>	
-	  </div>
+  	  <div class="info-and-options">
+   	    <div class="attr-tag">
+   		  <%= link_to "Answer", new_question_answer_path(q) %>
+   	    </div>
 
-	  <div class="info-and-options">
- 	    <div class="attr-tag">
- 		  <%= link_to "Answer", new_question_answer_path(q) %>
- 	    </div>
+   	    <div class="attr-tag">
+   	      <a href="">Upvote</a>
+   	    </div>
 
- 	    <div class="attr-tag">
- 	      <a href="">Upvote</a>
- 	    </div>
+   	    <div class="attr-tag">
+   	   	  <a href="">Seek Answer</a>
+   	    </div>
+   	  </div>
 
- 	    <div class="attr-tag">
- 	   	  <a href="">Seek Answer</a>
- 	    </div>
- 	  </div>
  	  <br>
-    	<div class="line-break"></div>
+    <div class="line-break"></div>
 
+ 
+    </div>
     <% end %>
-
-  </div>
-</div>
+ </div>
 
