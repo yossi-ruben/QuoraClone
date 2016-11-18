@@ -17,11 +17,13 @@
  	  </div>
 
     <div class="attr-tag">
- 	    <a href="">Upvote</a>
+ 	     <%= @question.votes.count %> : <%= link_to "Upvote", q_upvote_path(@question) %>
  	  </div>
 
  	  <div class="attr-tag">
- 	    <a href="">Seek Answer</a>
+ 	    <%= form_tag(send_to_user_path(@question.id)) do %>
+        <%= text_field_tag :username, nil, placeholder: "Ask User", class: "username"%>
+      <% end %>
  	  </div> 
   </div>
 
@@ -45,7 +47,7 @@
 
 	    <div class="info-and-options">
         <div class="attr-tag">
- 	        <a href="">Upvote</a>
+ 	        <%= ans.votes.count %> : <%= link_to "Upvote", a_upvote_path(ans) %>
  	       </div>
       </div>
       <br>

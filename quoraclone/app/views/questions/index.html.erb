@@ -35,7 +35,8 @@
  	      </div>
 
  	      <div class="attr-tag">
- 	        <a href="">Upvote</a>
+ 	      	 <%=q.votes.count %> : <%= link_to "Upvote", q_upvote_path(q) %>
+
  	      </div>
 
  	      <div class="attr-tag">

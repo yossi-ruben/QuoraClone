@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   get "questions/unanswered/qs" => "questions#unanswered", :as => "unanswered"
 
+  get "questions/:question_id/upvote" => "questions#q_upvote", :as => "q_upvote"
+
+
+  get "answers/:answer_id/upvote" => "answers#a_upvote", :as => "a_upvote"
+
   resources :users
   get "log_out" => "users#destroy", :as => "log_out"
   get "log_in" => "users#login", :as => "log_in"

@@ -40,6 +40,24 @@ class QuestionsController < ApplicationController
     end
   end
 
-
+  def q_upvote
+    q = Question.find_by(id: params[:question_id])
+    u = User.find_by(id: session[:user_id])
+    q.votes.create(user_id: u.id) if u 
+    redirect_to root_path     
+    # binding.pry
+  end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+#
