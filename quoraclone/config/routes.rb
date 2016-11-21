@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   	resources :answers
   end
 
+  resources :answers, only: [:show]
+
   post "questions/:question_id/answers" => "questions#add_answer", :as => "add_answer"
 
   post "questions/questions_query" => "questions#questions_query", :as => "questions_query"

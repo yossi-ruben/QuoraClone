@@ -2,5 +2,5 @@ class Vote < ApplicationRecord
   belongs_to :votable, polymorphic: true
   belongs_to :user
 
-  validates_uniqueness_of :user_id, scope: :votable_id
+  # validates_uniqueness_of :user_id, scope: :votable_id
 end

@@ -13,6 +13,11 @@ class AnswersController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    binding.pry
+
+  end
+
   def a_upvote
     a = Answer.find_by(id: params[:answer_id])
     u = User.find_by(id: session[:user_id])
@@ -21,5 +26,7 @@ class AnswersController < ApplicationController
     redirect_to root_path
     # binding.pry
   end
+
+
 
 end
