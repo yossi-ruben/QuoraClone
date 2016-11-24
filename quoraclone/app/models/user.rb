@@ -9,6 +9,8 @@ class User < ApplicationRecord
 	has_many :sent, :class_name => "QuestionSent", :foreign_key => "sender_id"
 	has_many :received, :class_name => "QuestionSent", :foreign_key => "reveiver_id"
 
+
+
     has_many :votes, as: :votable
 end
 
