@@ -69,7 +69,7 @@ class UsersController < ApplicationController
        qs.receiver = @receiver 
        qs.save!
     end
-    binding.pry
+    # binding.pry
     redirect_to root_path
   end
 

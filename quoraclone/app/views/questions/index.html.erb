@@ -6,12 +6,14 @@
 
   <div class="home-page">
 
+
+
 <!-- 	  <div class="options-feed">
 	  	<h4>Trending</h4>
 	  	<h4>Daf Yomi</h4>
 	  	<h4>Weekly Parsha</h4>
 	  </div> -->
-
+<!-- gegr -->
     <% @questions.each do |q| %>
       <div class="question-display-box">
 	    <div class="question-title">
@@ -36,7 +38,6 @@
 
  	      <div class="attr-tag">
  	      	 <%=q.votes.count %> : <%= link_to "Upvote", q_upvote_path(q) %>
-
  	      </div>
 
  	      <div class="attr-tag">

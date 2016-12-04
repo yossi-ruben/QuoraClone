@@ -7,8 +7,10 @@ class AnswersController < ApplicationController
 
   def create 
   	@question = Question.find_by(id: params[:question_id])
-  	@answer = Answer.new(body: params[:body], user_id: 1)
-  	@question.answers << @answer
+    if session[:user_id]
+  	  @answer = Answer.new(body: params[:body], user_id: session[:user_id])
+      @question.answers << @answer
+    end
 
     redirect_to root_path
   end

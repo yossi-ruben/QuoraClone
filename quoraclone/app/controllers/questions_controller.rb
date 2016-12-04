@@ -28,16 +28,19 @@ class QuestionsController < ApplicationController
     if @question.empty?
       @q = Question.new
       @q.title = params[:question]
-      if  session[:user_id]
+
+      if session[:user_id]
         @q.user_id = session[:user_id]
       else 
         @q.user_id = 1
       end
+
       @q.save!
       redirect_to root_path
     else
       redirect_to question_path(@question.first.id)
     end
+
   end
 
   def q_upvote
@@ -49,9 +52,6 @@ class QuestionsController < ApplicationController
   end
 
 end
-
-
-
 
 
 
