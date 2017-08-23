@@ -66,8 +66,8 @@ class UsersController < ApplicationController
     qs.sender = @sender
 
     if @receiver
-       qs.receiver = @receiver 
-       qs.save!
+      qs.receiver = @receiver 
+      qs.save!
     end
     # binding.pry
     redirect_to root_path
